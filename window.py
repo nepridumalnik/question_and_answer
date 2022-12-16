@@ -1,3 +1,5 @@
+# -*- mode: python ; coding: utf-8 -*-
+
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QLineEdit
 from PyQt5.QtWidgets import QHBoxLayout

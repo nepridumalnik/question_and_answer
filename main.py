@@ -1,3 +1,5 @@
+# -*- mode: python ; coding: utf-8 -*-
+
 from window import Window
 
 from PyQt5.QtWidgets import QApplication

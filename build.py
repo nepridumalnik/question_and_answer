@@ -1,3 +1,5 @@
+# -*- mode: python ; coding: utf-8 -*-
+
 import PyInstaller.__main__
 from distutils.dir_util import copy_tree
 
