@@ -66,8 +66,11 @@ class Window(QWidget):
         '''
 
         self.questionsList.clear()
+
         for question in self.current_questions:
             self.questionsList.addItem(question.question_text)
+
+        self.__set_active_answer(0)
 
     def __setup_ui(self) -> None:
         '''
@@ -101,15 +104,16 @@ class Window(QWidget):
 
         self.__update_questions()
 
-        self.questionsList.currentRowChanged.connect(self.__on_item_clicked)
+        self.questionsList.currentRowChanged.connect(self.__set_active_answer)
         search_input.textChanged.connect(self.__on_search_text_changed)
 
-    def __on_item_clicked(self, index: int):
+    def __set_active_answer(self, index: int):
         '''
-        Обработка нажатия на элемент
+        Выставить текущий ответ
         '''
 
-        self.answer.setPlainText(self.current_questions[index].answer_text)
+        if len(self.current_questions) > 0 and index >= 0:
+            self.answer.setPlainText(self.current_questions[index].answer_text)
 
     def __on_search_text_changed(self, text: str) -> None:
         '''
