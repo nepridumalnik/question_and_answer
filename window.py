@@ -30,9 +30,9 @@ class Question:
         if not os.path.isfile(a):
             raise f'Отсутствует ответ {a}'
 
-        with open(q, 'r') as f:
+        with open(q, 'r', encoding='utf8') as f:
             self.question_text = f.read()
-        with open(a, 'r') as f:
+        with open(a, 'r', encoding='utf8') as f:
             self.answer_text = f.read()
 
 
@@ -130,7 +130,7 @@ class Window(QWidget):
 
         self.__update_questions()
 
-    def __contains_strings(self, words: list[str], text_to_check: str) -> bool:
+    def __contains_strings(self, words, text_to_check: str) -> bool:
         '''
         Проверка на содержание одного из слов нового фильтра
         '''
