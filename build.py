@@ -10,7 +10,9 @@ DATA_DST: str = 'dist/main/questions'
 def make_executable(file: str) -> None:
     PyInstaller.__main__.run([
         f'{file}',
-        '--windowed'
+        '--windowed',
+        '-i',
+        'app.ico',
     ])
 
 
