@@ -11,7 +11,6 @@ if '__main__' == __name__:
         w.setWindowTitle('Вопрос-ответ')
         w.show()
 
-        exit(app.exec())
+        app.exec()
     except Exception as e:
         print(e)
-        exit(-1)
